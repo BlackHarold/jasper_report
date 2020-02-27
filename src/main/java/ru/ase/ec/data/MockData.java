@@ -27,53 +27,76 @@ public class MockData {
         dataBeanList.add(cips);
 
         docs = new ArrayList<>();
-        docs.add(new DocBean("FH1.***.E", "01"));
+        docs.add(new DocBean("FH1.A.R000.&.&&&&&&.&&&&&&.000.QC.0001.E", "02"));
         dataBeanList.add(docs);
 
         cipDetails = new ArrayList<>();
-        cipDetails.add(new CipDetailsBean(11, "details 11 code"));
+        cipDetails.add(new CipDetailsBean(11, "11 code"));
         dataBeanList.add(cipDetails);
 
+        System.out.println("dataBeanList: " + dataBeanList);
         return dataBeanList;
 
     }
 
     public ArrayList<DataBean> getDataBeans() {
+
         List<List<PlainBean>> rawDataBeansList = getDataBeanList();
         ArrayList<DataBean> dataBeanList = new ArrayList<>();
+        int counter = 0;
+
+        DataBean dataBean = new DataBean();
 
         for (List<PlainBean> rawList : rawDataBeansList) {
-            DataBean dataBean = new DataBean();
+
             for (PlainBean obj : rawList) {
 
                 if (obj instanceof CipIssueBean) {
-                    System.out.println("CIPISSUE: " + rawList);
-                    dataBean.setDescription(((CipIssueBean) obj).getDescription());
-                    dataBean.setLink(((CipIssueBean) obj).getLink());
+
+                    String description = dataBean.getDescription() != null ? dataBean.getDescription() : "";
+                    dataBean.setDescription((description + "\n\n\n" + ((CipIssueBean) obj).getDescription()));
+                    String link = dataBean.getLink() != null ? dataBean.getLink() : "";
+                    dataBean.setLink(link + "\n\n\n" + ((CipIssueBean) obj).getLink());
 
                 } else if (obj instanceof CipBean) {
-                    System.out.println("CIPBEAN: " + rawList);
-                    dataBean.setRegContr(((CipBean) obj).getRegContr());
-                    dataBean.setCipYear(((CipBean) obj).getCipYear());
+//                    dataBean.setRegContr(((CipBean) obj).getRegContr());
+                    dataBean.setRegContr("Контролев В. ");
+//                    dataBean.setCipYear(((CipBean) obj).getCipYear());
+                    dataBean.setCipYear("CIP-000001_2020");
 
-                    dataBean.setTeamLead(((CipBean) obj).getTeamLead());
-                    dataBean.setLeadProjEng(((CipBean) obj).getLeadProjEng());
+//                    dataBean.setTeamLead(((CipBean) obj).getTeamLead());
+                    dataBean.setTeamLead("Начальников Д." + counter);
+//                    dataBean.setLeadProjEng(((CipBean) obj).getLeadProjEng());
+                    dataBean.setLeadProjEng("Ведунов А." + counter);
 
-                    dataBean.setDepLead(((CipBean) obj).getDepLead());
-                    dataBean.setChiefArch(((CipBean) obj).getChiefArch());
+//                    dataBean.setDepLead(((CipBean) obj).getDepLead());
+                    dataBean.setDepLead("Отдельников А." + counter);
+//                    dataBean.setChiefArch(((CipBean) obj).getChiefArch());
+                    dataBean.setChiefArch("ГАП_" + counter);
 
-                    dataBean.setNote(((CipBean) obj).getNote());
+//                    dataBean.setNote(((CipBean) obj).getNote());
+                    dataBean.setNote("{note_" + counter + "}");
 
-                    dataBean.setMadeChanges(((CipBean) obj).getMadeChanges());
-                    dataBean.setMadeUp(((CipBean) obj).getMadeUp());
-                    dataBean.setChiefProjEng(((CipBean) obj).getChiefProjEng());
-                    dataBean.setAppr(((CipBean) obj).getAppr());
+//                    dataBean.setMadeChanges(((CipBean) obj).getMadeChanges());
+                    dataBean.setMadeChanges("Изменяев К. ");
+//                    dataBean.setMadeUp(((CipBean) obj).getMadeUp());
+                    dataBean.setMadeUp("Составилов Р.");
+//                    dataBean.setChiefProjEng(((CipBean) obj).getChiefProjEng());
+                    dataBean.setChiefProjEng("Гиппопатамов И. " + counter);
+//                    dataBean.setAppr(((CipBean) obj).getAppr());
+                    dataBean.setAppr("Утвердилов Л.");
+
+                } else if (obj instanceof DocBean) {
+                    dataBean.setNumOfChanges(((DocBean) obj).getRevision());
+                    dataBean.setDocSetCode(obj.getName());
+
                 } else if (obj instanceof CipDetailsBean) {
-                    System.out.println("CIPDETAILSBEAN: " + rawList);
-
+                    dataBean.setCode(((CipDetailsBean) obj).getCode());
                 }
+                counter++;
             }
         }
+        dataBeanList.add(dataBean);
 
         return dataBeanList;
     }

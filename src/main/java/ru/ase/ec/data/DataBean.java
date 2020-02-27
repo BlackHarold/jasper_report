@@ -168,4 +168,27 @@ public class DataBean {
     public void setCode(String code) {
         this.code = code;
     }
+
+    @Override
+    public String toString() {
+        return "DataBean{" +
+                "regContr='" + regContr + '\'' +
+                ", cipYear='" + cipYear + '\'' +
+                ", teamLead='" + teamLead + '\'' +
+                ", leadProjEng='" + leadProjEng + '\'' +
+                ", depLead='" + depLead + '\'' +
+                ", chiefArch='" + chiefArch + '\'' +
+                ", note='" + note + '\'' +
+                ", madeChanges='" + madeChanges + '\'' +
+                ", madeUp='" + madeUp + '\'' +
+                ", chiefProjEng='" + chiefProjEng + '\'' +
+                ", appr='" + appr + '\'' +
+                ", addr='" + addr + '\'' +
+                ", numOfChanges='" + numOfChanges + '\'' +
+                ", docSetCode='" + docSetCode + '\'' +
+                ", link='" + link + '\'' +
+                ", description='" + description + '\'' +
+                ", code='" + code + '\'' +
+                '}';
+    }
 }
