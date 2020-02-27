@@ -1,0 +1,6 @@
+.idea
+.settings
+/bin
+*.iml
+src/main/resources/out
+src/main/resources/font
