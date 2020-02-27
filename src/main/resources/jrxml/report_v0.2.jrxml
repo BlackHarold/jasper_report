@@ -3,7 +3,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-              name="report_template" pageWidth="900" pageHeight="842" columnWidth="860" leftMargin="20" rightMargin="20"
+              name="report_template" pageWidth="570" pageHeight="842" columnWidth="530" rightMargin="20"
               topMargin="20" bottomMargin="20" whenResourceMissingType="Empty"
               uuid="1fa1e068-9989-4060-98ee-fc56571d69d5">
     <property name="ireport.zoom" value="1"/>
