@@ -4,6 +4,7 @@ public class SubReportBean {
 
     private String city;
     private String street;
+    private String number;
 
     public String getCity() {
         return city;
@@ -19,5 +20,13 @@ public class SubReportBean {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

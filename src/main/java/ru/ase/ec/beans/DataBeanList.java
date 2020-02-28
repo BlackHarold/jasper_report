@@ -11,12 +11,15 @@ public class DataBeanList {
         SubReportBean subBean1 = new SubReportBean();
         subBean1.setCity("Mumbai");
         subBean1.setStreet("M.G.Road");
+        subBean1.setNumber("80");
         SubReportBean subBean2 = new SubReportBean();
         subBean2.setCity("New York");
         subBean2.setStreet("Park Street");
+        subBean2.setNumber("81");
         SubReportBean subBean3 = new SubReportBean();
         subBean3.setCity("San Fransisco");
         subBean3.setStreet("King Street");
+        subBean3.setNumber("82");
 
         ArrayList<DataBean> dataBeanList = new ArrayList<>();
         // Create master report data
