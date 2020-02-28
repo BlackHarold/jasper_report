@@ -18,17 +18,17 @@ public class DataBeanList {
         subBean3.setCity("San Fransisco");
         subBean3.setStreet("King Street");
 
-        ArrayList<DataBean> dataBeanList = new ArrayList<DataBean>();
-
+        ArrayList<DataBean> dataBeanList = new ArrayList<>();
         // Create master report data
-        dataBeanList.add(produce("Manisha", "India",
-                Arrays.asList(subBean1)));
-        dataBeanList.add(produce("Dennis Ritchie", "USA",
-                Arrays.asList(subBean2)));
-        dataBeanList.add(produce("V.Anand", "India",
-                Arrays.asList(subBean1)));
-        dataBeanList.add(produce("Shrinath", "California",
-                Arrays.asList(subBean3)));
+        dataBeanList.add(produce("Manisha", "India", Arrays.asList(
+                subBean1, subBean2, subBean3, subBean1, subBean2, subBean3)));
+        dataBeanList.add(produce("Dennis Ritchie", "USA", Arrays.asList(subBean2)));
+        dataBeanList.add(produce("V.Anand", "India", Arrays.asList(subBean1)));
+        dataBeanList.add(produce("Shrinath", "California", Arrays.asList(subBean3)));
+        dataBeanList.add(produce("Manisha", "India", Arrays.asList(subBean1)));
+        dataBeanList.add(produce("Dennis Ritchie", "USA", Arrays.asList(subBean2)));
+        dataBeanList.add(produce("V.Anand", "India", Arrays.asList(subBean1)));
+        dataBeanList.add(produce("Shrinath", "California", Arrays.asList(subBean3)));
 
         return dataBeanList;
     }

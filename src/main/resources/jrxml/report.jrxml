@@ -1,128 +1,135 @@
-<?xml version = "1.0" encoding = "UTF-8"?>
-<jasperReport xmlns = "http://jasperreports.sourceforge.net/jasperreports"
-			  xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
-			  xsi:schemaLocation = "http://jasperreports.sourceforge.net/jasperreports
-   http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
-			  name = "report" language = "java" pageWidth = "595"
-			  pageHeight = "842" columnWidth ="555" leftMargin = "20" rightMargin = "20"
-			  topMargin = "20" bottomMargin = "20">
-
-	<parameter name = "SUBREPORT_DIR" class = "java.lang.String" isForPrompting = "false">
-		<defaultValueExpression>
-			<![CDATA["C:/Users/20911894/IdeaProjects/report-generator/src/main/resources/jrxml/"]]>
-		</defaultValueExpression>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4c40095-0255-4cbe-9029-556d9043bbfb">
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:/Users/20911894/IdeaProjects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
 	</parameter>
-
-	<field name = "country" class = "java.lang.String"/>
-	<field name = "name" class = "java.lang.String"/>
-	<field name = "subReportBeanList" class = "java.util.List"/>
-
+	<field name="country" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="subReportBeanList" class="java.util.List"/>
 	<background>
-		<band splitType = "Stretch"/>
+		<band splitType="Stretch"/>
 	</background>
-
 	<title>
-		<band height = "35" splitType = "Stretch">
-
-			<staticText>
-				<reportElement x = "0" y = "0" width = "204" height = "34"/>
-
-				<textElement>
-					<font size = "26" isBold = "true"/>
-				</textElement>
-
-				<text><![CDATA[Contact Report]]></text>
-			</staticText>
-
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 		</band>
 	</title>
-
 	<pageHeader>
-		<band height = "17" splitType = "Stretch"/>
-	</pageHeader>
-
-	<columnHeader>
-		<band height = "21" splitType = "Stretch"/>
-	</columnHeader>
-
-	<detail>
-		<band height = "112" splitType = "Stretch">
-
+		<band height="70" splitType="Stretch">
 			<staticText>
-				<reportElement x = "0" y = "0" width = "100" height = "20"/>
-
-				<textElement>
-					<font size = "12" isBold = "true"/>
+				<reportElement x="62" y="0" width="78" height="27" uuid="4144980a-7393-418a-9d18-0a2be32ba3a9">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
 				</textElement>
-
+				<text><![CDATA[Разрешение]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="137" height="27" uuid="c2a83971-d845-461e-bc5f-ebaed970abdc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Обозначение]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="277" y="0" width="277" height="27" uuid="b0169049-004a-4001-b8bd-7a8c67740caf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["FH1.A.R000.&&&&&&&&&&&&&&&&.000.QC.0001.E"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="27" width="78" height="43" uuid="62b96ef0-f035-472d-8b64-35243078689a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CIP-0000001"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="27" width="277" height="43" uuid="52190873-4496-45d1-9afc-5024a3593ac8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Белоярская АЭС. Блок 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="27" width="137" height="43" uuid="6e6e6ea1-7460-499e-b1d7-e4d6ccb2de4d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Наименование объекта строительства]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="80" height="20" uuid="cf8de5ae-48f1-466c-9619-0643171878a8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
 				<text><![CDATA[Name:]]></text>
 			</staticText>
-
 			<staticText>
-				<reportElement x = "0" y = "20" width = "100" height = "20"/>
-
+				<reportElement x="180" y="20" width="80" height="20" uuid="e6d180b3-b13b-44ac-8c74-ea681212c794"/>
 				<textElement>
-					<font size = "12" isBold = "true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
-
 				<text><![CDATA[Country:]]></text>
 			</staticText>
-
 			<textField>
-				<reportElement x = "104" y = "0" width = "277" height = "20"/>
-
+				<reportElement x="270" y="0" width="111" height="20" uuid="2e45f219-fe51-417b-a8ec-dd5c152b327e"/>
 				<textElement>
-					<font size = "12"/>
+					<font size="12"/>
 				</textElement>
-
-				<textFieldExpression class = "java.lang.String">
-					<![CDATA[$F{name}]]>
-				</textFieldExpression>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
-
 			<textField>
-				<reportElement x = "104" y = "20" width = "277" height = "20"/>
-
+				<reportElement x="270" y="20" width="111" height="20" uuid="eb0d6e1d-2604-4c38-a3a3-5ebf1ece614a"/>
 				<textElement>
-					<font size = "12"/>
+					<font size="12"/>
 				</textElement>
-
-				<textFieldExpression class = "java.lang.String">
-					<![CDATA[$F{country}]]>
-				</textFieldExpression>
+				<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
 			</textField>
-
 			<subreport>
-				<reportElement positionType = "Float" x = "335" y = "25" width = "175"
-							   height = "20" isRemoveLineWhenBlank = "true" backcolor = "#99ccff"/>
-
-				<dataSourceExpression>
-					new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
-					($F{subReportBeanList})
-				</dataSourceExpression>
-
-				<subreportExpression class = "java.lang.String">
-					<![CDATA[$P{SUBREPORT_DIR} + "simple.jasper"]]>
-				</subreportExpression>
+				<reportElement positionType="Float" x="340" y="20" width="99" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+					($F{subReportBeanList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "simple.jasper"]]></subreportExpression>
 			</subreport>
-
 			<line>
-				<reportElement x = "0" y = "50" width = "550" height = "1"/>
+				<reportElement x="20" y="50" width="530" height="1" uuid="5aa3bc0a-8cfd-4c3e-9ac3-2b700009b890"/>
 			</line>
-
 		</band>
 	</detail>
-
 	<columnFooter>
-		<band height = "19" splitType = "Stretch"/>
+		<band height="19" splitType="Stretch"/>
 	</columnFooter>
-
 	<pageFooter>
-		<band height = "18" splitType = "Stretch"/>
+		<band height="18" splitType="Stretch"/>
 	</pageFooter>
-
 	<summary>
-		<band height = "14" splitType = "Stretch"/>
+		<band height="14" splitType="Stretch"/>
 	</summary>
-
 </jasperReport>
