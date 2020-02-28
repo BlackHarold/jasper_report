@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e4c40095-0255-4cbe-9029-556d9043bbfb">
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["C:/Users/20911894/IdeaProjects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["Z:/Development/Projects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
 	</parameter>
 	<field name="country" class="java.lang.String"/>
 	<field name="name" class="java.lang.String"/>
