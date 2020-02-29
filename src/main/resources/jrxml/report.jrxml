@@ -153,7 +153,7 @@
 				</graphicElement>
 			</rectangle>
 			<subreport>
-				<reportElement positionType="Float" x="62" y="19" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8"/>
+				<reportElement positionType="Float" x="62" y="3" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 					($F{subReportBeanList})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "simple.jasper"]]></subreportExpression>
