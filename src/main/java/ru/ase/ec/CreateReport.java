@@ -46,6 +46,8 @@ public class CreateReport {
 
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("subreportParameter", jasperSubReport);
+            parameters.put("cip", "CIP-000001");
+
             JasperPrint jasperMainPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
 
             view(jasperMainPrint);// viewer component for jasper report

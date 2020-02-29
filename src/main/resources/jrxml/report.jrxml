@@ -8,6 +8,7 @@
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Z:/Development/Projects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="cip" class="java.lang.String"/>
 	<field name="doc" class="java.lang.String"/>
 	<field name="revision" class="java.lang.String"/>
 	<field name="code" class="java.lang.String"/>
@@ -72,7 +73,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Times New Roman" size="10" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["CIP-0000001"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$P{cip}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="277" y="27" width="277" height="43" uuid="52190873-4496-45d1-9afc-5024a3593ac8">
@@ -537,7 +538,7 @@
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="true"/>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{revision}]]></textFieldExpression>
 			</textField>
