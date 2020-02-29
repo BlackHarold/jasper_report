@@ -4,8 +4,10 @@
 	<property name="ireport.zoom" value="1"/>
 	<property name="ireport.x" value="5"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Default" isDefault="true" pdfFontName="./font/timesroman.ttf" pdfEncoding="Cp1251"/>
 	<parameter name="subreport_path" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="body_path" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="cip" class="java.lang.String"/>
 	<parameter name="doc" class="java.lang.String"/>
 	<field name="doc" class="java.lang.String"/>
@@ -198,38 +200,26 @@
 	<detail>
 		<band height="637" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<rectangle>
-				<reportElement x="140" y="0" width="414" height="637" uuid="fb5d0be7-d121-4032-a517-29b27ba92fdb">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="413" y="0" width="39" height="637" uuid="9b1c93cc-8235-41c6-a7a2-56b171b91964">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
-			<rectangle>
-				<reportElement x="62" y="0" width="39" height="637" uuid="ea774920-6414-4ab4-9b7d-b51abee73949">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.5"/>
-				</graphicElement>
-			</rectangle>
 			<subreport>
-				<reportElement positionType="Float" x="62" y="3" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8"/>
+				<reportElement positionType="Float" x="-20" y="-32" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
+					($F{subReportBeanList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{body_path}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="62" y="-40" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 					($F{subReportBeanList})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{subreport_path}]]></subreportExpression>
 			</subreport>
 			<textField>
-				<reportElement x="62" y="31" width="39" height="20" uuid="71b3808f-2c57-4b9f-ba97-026ee9400466">
+				<reportElement x="62" y="0" width="39" height="20" uuid="71b3808f-2c57-4b9f-ba97-026ee9400466">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
@@ -245,7 +235,7 @@
 				<textFieldExpression><![CDATA[$F{revision}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="413" y="30" width="39" height="20" uuid="ea281d57-54d9-49b4-a945-a42d8a4ffec6">
+				<reportElement x="413" y="0" width="39" height="20" uuid="ea281d57-54d9-49b4-a945-a42d8a4ffec6">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
