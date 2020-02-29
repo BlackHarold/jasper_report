@@ -4,24 +4,30 @@ import java.util.List;
 
 public class DataBean {
 
-    private String name;
-    private String country;
+    private String revision;
+    private String code;
     private List<SubReportBean> subReportBeanList;
 
-    public String getName() {
-        return name;
+    public DataBean(String revision, String code, List<SubReportBean> subReportBeanList) {
+        this.revision = revision;
+        this.code = code;
+        this.subReportBeanList = subReportBeanList;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getRevision() {
+        return revision;
     }
 
-    public String getCountry() {
-        return country;
+    public void setRevision(String revision) {
+        this.revision = revision;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public List<SubReportBean> getSubReportBeanList() {

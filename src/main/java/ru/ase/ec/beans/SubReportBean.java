@@ -2,31 +2,56 @@ package ru.ase.ec.beans;
 
 public class SubReportBean {
 
-    private String city;
-    private String street;
-    private String number;
+    private String revision;
+    private String link;
+    private String description;
+    private String code;
+    private String note;
 
-    public String getCity() {
-        return city;
+    public SubReportBean(String link, String description, String note) {
+        this.link = link;
+        this.description = description;
+        this.code = code;
+        this.note = note;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public String getRevision() {
+        return revision;
     }
 
-    public String getStreet() {
-        return street;
+    public void setRevision(String revision) {
+        this.revision = revision;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public String getLink() {
+        return link;
     }
 
-    public String getNumber() {
-        return number;
+    public void setLink(String link) {
+        this.link = link;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
     }
 }

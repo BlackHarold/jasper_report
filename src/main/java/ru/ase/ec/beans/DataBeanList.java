@@ -8,46 +8,26 @@ public class DataBeanList {
     public ArrayList<DataBean> getDataBeanList() {
 
         // Create sub report data
-        SubReportBean subBean1 = new SubReportBean();
-        subBean1.setCity("Mumbai");
-        subBean1.setStreet("M.G.Road");
-        subBean1.setNumber("80");
-        SubReportBean subBean2 = new SubReportBean();
-        subBean2.setCity("New York");
-        subBean2.setStreet("Park Street");
-        subBean2.setNumber("81");
-        SubReportBean subBean3 = new SubReportBean();
-        subBean3.setCity("San Fransisco");
-        subBean3.setStreet("King Street");
-        subBean3.setNumber("82");
+        SubReportBean subBean1 = new SubReportBean("link1","description1", "note1");
+        SubReportBean subBean2 = new SubReportBean("link2","description2",  "note2");
+        SubReportBean subBean3 = new SubReportBean("link3","description3",  "note3");
+
 
         ArrayList<DataBean> dataBeanList = new ArrayList<>();
         // Create master report data
-        dataBeanList.add(produce("Manisha", "India", Arrays.asList(
-                subBean1, subBean2, subBean3, subBean1, subBean2, subBean3)));
-        dataBeanList.add(produce("Dennis Ritchie", "USA", Arrays.asList(subBean2)));
-        dataBeanList.add(produce("V.Anand", "India", Arrays.asList(subBean1)));
-        dataBeanList.add(produce("Shrinath", "California", Arrays.asList(subBean3)));
-        dataBeanList.add(produce("Manisha", "India", Arrays.asList(subBean1)));
-        dataBeanList.add(produce("Dennis Ritchie", "USA", Arrays.asList(subBean2)));
-        dataBeanList.add(produce("V.Anand", "India", Arrays.asList(subBean1)));
-        dataBeanList.add(produce("Shrinath", "California", Arrays.asList(subBean3)));
+        dataBeanList.add(produce("01", "code1", Arrays.asList(subBean1, subBean2, subBean3, subBean1, subBean2, subBean3)));
+        dataBeanList.add(produce("02", "code2", Arrays.asList(subBean2, subBean1, subBean2, subBean3)));
+        dataBeanList.add(produce("03", "code3", Arrays.asList(subBean1, subBean2, subBean3)));
 
         return dataBeanList;
     }
 
-    /*
+    /**
      * This method returns a DataBean object,
-     * with name, country and sub report
      * bean data set in it.
      */
-    private DataBean produce(String name, String country,
-                             List<SubReportBean> subBean) {
-        DataBean dataBean = new DataBean();
-
-        dataBean.setName(name);
-        dataBean.setCountry(country);
-        dataBean.setSubReportBeanList(subBean);
+    private DataBean produce(String revision, String code, List<SubReportBean> subBean) {
+        DataBean dataBean = new DataBean(revision, code, subBean);
 
         return dataBean;
     }

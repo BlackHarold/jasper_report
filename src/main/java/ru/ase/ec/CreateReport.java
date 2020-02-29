@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Properties;
 
 import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.base.JRBaseFont;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JRViewer;
 import ru.ase.ec.beans.DataBean;
