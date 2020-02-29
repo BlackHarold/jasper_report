@@ -2,7 +2,7 @@ package ru.ase.ec.beans;
 
 public class SubReportBean {
 
-    private String revision;
+//    private String revision;
     private String link;
     private String description;
     private String code;
@@ -15,13 +15,13 @@ public class SubReportBean {
         this.note = note;
     }
 
-    public String getRevision() {
-        return revision;
-    }
-
-    public void setRevision(String revision) {
-        this.revision = revision;
-    }
+//    public String getRevision() {
+//        return revision;
+//    }
+//
+//    public void setRevision(String revision) {
+//        this.revision = revision;
+//    }
 
     public String getLink() {
         return link;

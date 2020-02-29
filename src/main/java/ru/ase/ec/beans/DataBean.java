@@ -4,14 +4,24 @@ import java.util.List;
 
 public class DataBean {
 
+    private String doc;
     private String revision;
     private String code;
     private List<SubReportBean> subReportBeanList;
 
-    public DataBean(String revision, String code, List<SubReportBean> subReportBeanList) {
+    public DataBean(String doc,String revision, String code, List<SubReportBean> subReportBeanList) {
+        this.doc=doc;
         this.revision = revision;
         this.code = code;
         this.subReportBeanList = subReportBeanList;
+    }
+
+    public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
     }
 
     public String getRevision() {

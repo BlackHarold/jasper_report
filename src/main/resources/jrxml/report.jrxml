@@ -8,6 +8,7 @@
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["Z:/Development/Projects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
 	</parameter>
+	<field name="doc" class="java.lang.String"/>
 	<field name="revision" class="java.lang.String"/>
 	<field name="code" class="java.lang.String"/>
 	<field name="subReportBeanList" class="java.util.List"/>
@@ -56,23 +57,6 @@
 				</textElement>
 				<text><![CDATA[Обозначение]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="277" y="0" width="277" height="27" uuid="b0169049-004a-4001-b8bd-7a8c67740caf">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Times New Roman" size="10" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA["FH1.A.R000.&&&&&&&&&&&&&&&&.000.QC.0001.E"]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="62" y="27" width="78" height="43" uuid="62b96ef0-f035-472d-8b64-35243078689a">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -439,7 +423,7 @@
 				<textFieldExpression><![CDATA["teamLead"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="46" y="0" width="16" height="37" uuid="335a2f87-e1fd-4409-b1ec-9e753dc22838">
+				<reportElement x="46" y="0" width="16" height="31" uuid="335a2f87-e1fd-4409-b1ec-9e753dc22838">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -455,7 +439,7 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="0" width="16" height="37" uuid="eb12cdd4-3259-4cd4-8a1d-dac6baabc3ff">
+				<reportElement x="30" y="0" width="16" height="31" uuid="eb12cdd4-3259-4cd4-8a1d-dac6baabc3ff">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -471,7 +455,7 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="30" y="37" width="16" height="59" uuid="86e6dae7-0eb4-47e7-8463-ea21162be2f0">
+				<reportElement x="30" y="31" width="16" height="65" uuid="86e6dae7-0eb4-47e7-8463-ea21162be2f0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -487,7 +471,7 @@
 				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="46" y="37" width="16" height="59" uuid="d2f4c092-0fa5-4cdc-82c1-4ff0c91521fe">
+				<reportElement x="46" y="31" width="16" height="65" uuid="d2f4c092-0fa5-4cdc-82c1-4ff0c91521fe">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -659,6 +643,25 @@
 				</textElement>
 				<text><![CDATA[Вед. инж-проект.]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="277" y="-70" width="277" height="27" uuid="1faf3822-deae-4b25-b2a4-f743c1bac8f5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doc}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
