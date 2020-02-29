@@ -1,4 +1,5 @@
 package ru.ase.ec;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class CreateReport {
             e.printStackTrace();
         }
 
-        String masterReportFileName = properties.getProperty("main_template");
+        String masterReportFileName = properties.getProperty("master_template");
         String subReportFileName = properties.getProperty("template");
         String destFileName = properties.getProperty("file_name");
 
@@ -39,22 +40,35 @@ public class CreateReport {
         ArrayList<DataBean> dataList = DataBeanList.getDataBeanList();
         JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(dataList);
 
+
+        JasperReport jasperSubReport = null;
         try {
-            /* Compile the master and sub report */
-            JasperReport jasperMasterReport = JasperCompileManager.compileReport(masterReportFileName);
-            JasperReport jasperSubReport = JasperCompileManager.compileReport(subReportFileName);
+            /* Compile sub report */
+            jasperSubReport = JasperCompileManager.compileReport(subReportFileName);
+
+        } catch (JRException jre) {
+            System.out.println("sub report error compile");
+            jre.printStackTrace();
+        }
+
+        JasperReport jasperMasterReport;
+        try {
+            /* Compile the master */
+            jasperMasterReport = JasperCompileManager.compileReport(masterReportFileName);
 
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("subreportParameter", jasperSubReport);
             parameters.put("cip", "CIP-000001");
+            parameters.put("doc", "FH1.&&&&&&&&&&&&&.1.E");
 
             JasperPrint jasperMainPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
 
             view(jasperMainPrint);// viewer component for jasper report
-            JasperExportManager.exportReportToPdfFile(jasperMainPrint, properties.getProperty("file_name"));
+            JasperExportManager.exportReportToPdfFile(jasperMainPrint, destFileName);
 
-        } catch (JRException e) {
-            e.printStackTrace();
+        } catch (JRException jre) {
+            System.out.println("master report error compile");
+            jre.printStackTrace();
         }
     }
 

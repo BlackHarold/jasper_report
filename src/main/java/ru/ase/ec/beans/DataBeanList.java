@@ -15,7 +15,7 @@ public class DataBeanList {
 
         ArrayList<DataBean> dataBeanList = new ArrayList<>();
         // Create master report data
-        dataBeanList.add(produce("FH1.&&&&.1.E","01", "code1", Arrays.asList(subBean1, subBean2, subBean3, subBean1, subBean2, subBean3)));
+        dataBeanList.add(produce("FH1.&&&&.1.E","01", "code1", Arrays.asList(subBean1, subBean2, subBean3, subBean1, subBean2, subBean3,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2,subBean1, subBean2, subBean3, subBean1, subBean2)));
         dataBeanList.add(produce("FH1.&&&&.2.E","02", "code2", Arrays.asList(subBean2, subBean1, subBean2, subBean3)));
         dataBeanList.add(produce("FH1.&&&&.3.E","03", "code3", Arrays.asList(subBean1, subBean2, subBean3)));
 
