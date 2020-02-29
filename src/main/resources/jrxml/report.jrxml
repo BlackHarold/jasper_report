@@ -5,9 +5,7 @@
 	<property name="ireport.x" value="5"/>
 	<property name="ireport.y" value="0"/>
 	<style name="Default" isDefault="true" pdfFontName="./font/timesroman.ttf" pdfEncoding="Cp1251"/>
-	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["Z:/Development/Projects/report-generator/src/main/resources/jrxml/"]]></defaultValueExpression>
-	</parameter>
+	<parameter name="subreport_path" class="java.lang.String" isForPrompting="false"/>
 	<parameter name="cip" class="java.lang.String"/>
 	<parameter name="doc" class="java.lang.String"/>
 	<field name="doc" class="java.lang.String"/>
@@ -228,7 +226,7 @@
 				<reportElement positionType="Float" x="62" y="3" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 					($F{subReportBeanList})]]></dataSourceExpression>
-				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "simple.jasper"]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{subreport_path}]]></subreportExpression>
 			</subreport>
 			<textField>
 				<reportElement x="62" y="31" width="39" height="20" uuid="71b3808f-2c57-4b9f-ba97-026ee9400466">

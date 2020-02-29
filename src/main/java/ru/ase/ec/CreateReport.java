@@ -1,20 +1,18 @@
 package ru.ase.ec;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-
 import net.sf.jasperreports.engine.*;
-import net.sf.jasperreports.engine.base.JRBaseFont;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JRViewer;
 import ru.ase.ec.beans.DataBean;
 import ru.ase.ec.beans.DataBeanList;
 
 import javax.swing.*;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 public class CreateReport {
 
@@ -24,47 +22,44 @@ public class CreateReport {
     }
 
     public void create() {
+
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("src/main/resources/application.properties"));
         } catch (IOException e) {
-            System.out.println("error " + e.getMessage());
             e.printStackTrace();
         }
 
-        String masterReportFileName = properties.getProperty("master_template");
-        String subReportFileName = properties.getProperty("template");
-        String destFileName = properties.getProperty("file_name");
 
         DataBeanList DataBeanList = new DataBeanList();
         ArrayList<DataBean> dataList = DataBeanList.getDataBeanList();
         JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(dataList);
 
+        String subReportFromName = properties.getProperty("sub_template");
+        String subReportToName = properties.getProperty("subreport_path");
 
-        JasperReport jasperSubReport = null;
         try {
-            /* Compile sub report */
-            jasperSubReport = JasperCompileManager.compileReport(subReportFileName);
 
-        } catch (JRException jre) {
-            System.out.println("sub report error compile");
-            jre.printStackTrace();
-        }
+            /* Compile the subreport */
+            JasperCompileManager.compileReportToFile(subReportFromName, subReportToName);
 
-        JasperReport jasperMasterReport;
-        try {
             /* Compile the master */
-            jasperMasterReport = JasperCompileManager.compileReport(masterReportFileName);
+            String masterReportFileName = properties.getProperty("master_template");
+            JasperReport jasperMasterReport = JasperCompileManager.compileReport(masterReportFileName);
 
+            /* fill parameters to the master */
             Map<String, Object> parameters = new HashMap<>();
-            parameters.put("subreportParameter", jasperSubReport);
+            parameters.put("subreport_path", subReportToName);
             parameters.put("cip", "CIP-000001");
             parameters.put("doc", "FH1.&&&&&&&&&&&&&.1.E");
+            JasperPrint preparedJasperReportPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
 
-            JasperPrint jasperMainPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
+            /* viewer component for jasper report */
+            view(preparedJasperReportPrint);
 
-            view(jasperMainPrint);// viewer component for jasper report
-            JasperExportManager.exportReportToPdfFile(jasperMainPrint, destFileName);
+            /* export prepared report to pdf file */
+            String file_name = properties.getProperty("file_name");
+            JasperExportManager.exportReportToPdfFile(preparedJasperReportPrint, file_name);
 
         } catch (JRException jre) {
             System.out.println("master report error compile");
@@ -72,6 +67,12 @@ public class CreateReport {
         }
     }
 
+    /**
+     * The utility method
+     * allows to view prepared report in Jasper Report Frame utilit.
+     *
+     * @param jasperPrint
+     */
     public void view(JasperPrint jasperPrint) {
         JRViewer jv = new JRViewer(jasperPrint);
         JFrame reportFrame = new JFrame();
