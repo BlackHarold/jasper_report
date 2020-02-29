@@ -34,11 +34,6 @@ public class CreateReport {
         String masterReportFileName = properties.getProperty("main_template");
         String subReportFileName = properties.getProperty("template");
         String destFileName = properties.getProperty("file_name");
-        System.out.println("=== properties ===");
-        System.out.println(masterReportFileName);
-        System.out.println(subReportFileName);
-        System.out.println(destFileName);
-        System.out.println("=== properties ===");
 
         DataBeanList DataBeanList = new DataBeanList();
         ArrayList<DataBean> dataList = DataBeanList.getDataBeanList();
@@ -55,13 +50,10 @@ public class CreateReport {
 
             view(jasperMainPrint);// viewer component for jasper report
             JasperExportManager.exportReportToPdfFile(jasperMainPrint, properties.getProperty("file_name"));
-//            JasperFillManager.fillReportToFile(jasperMasterReport, destFileName, parameters, beanColDataSource);
 
         } catch (JRException e) {
-
             e.printStackTrace();
         }
-        System.out.println("Done filling ...");
     }
 
     public void view(JasperPrint jasperPrint) {

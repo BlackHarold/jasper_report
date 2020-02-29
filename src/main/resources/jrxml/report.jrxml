@@ -633,6 +633,32 @@
 				</textElement>
 				<text><![CDATA[Примечание]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="30" y="156" width="16" height="90" uuid="dd3024b9-9515-41be-b5f5-a849c45d825f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="3" rightPadding="0">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Нач. группы]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="46" y="156" width="16" height="90" uuid="4bf01786-f691-4e3f-b3cd-0cbf6937600e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="3" rightPadding="0">
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Вед. инж-проект.]]></text>
+			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
@@ -1097,32 +1123,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA["approve"]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="46" y="-512" width="16" height="90" uuid="4bf01786-f691-4e3f-b3cd-0cbf6937600e">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="3" rightPadding="0">
-					<pen lineWidth="0.5"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<text><![CDATA[Вед. инж-проект.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="30" y="-512" width="16" height="90" uuid="dd3024b9-9515-41be-b5f5-a849c45d825f">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box topPadding="0" leftPadding="0" bottomPadding="3" rightPadding="0">
-					<pen lineWidth="0.5"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
-					<font fontName="Times New Roman" size="10"/>
-				</textElement>
-				<text><![CDATA[Нач. группы]]></text>
-			</staticText>
 		</band>
 	</pageFooter>
 	<summary>
