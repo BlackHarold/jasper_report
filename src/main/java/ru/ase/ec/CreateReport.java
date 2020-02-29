@@ -3,6 +3,7 @@ package ru.ase.ec;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JRViewer;
+import org.apache.log4j.Logger;
 import ru.ase.ec.beans.DataBean;
 import ru.ase.ec.beans.DataBeanList;
 
@@ -15,6 +16,9 @@ import java.util.Map;
 import java.util.Properties;
 
 public class CreateReport {
+
+    //    private static final Logger LOG = Logger.getLogger(CreateReport.class);
+    private static final Logger LOG = Logger.getLogger("blackLogger");
 
     public static void main(String[] args) {
 
@@ -37,11 +41,15 @@ public class CreateReport {
 
         String subReportFromName = properties.getProperty("sub_template");
         String subReportToName = properties.getProperty("subreport_path");
+        String bodyReportFromName = properties.getProperty("body_template");
+        String bodyReportToName = properties.getProperty("bodyreport_path");
 
         try {
 
-            /* Compile the subreport */
+            /* Compile the sub report */
             JasperCompileManager.compileReportToFile(subReportFromName, subReportToName);
+            /* Compile the body report */
+            JasperCompileManager.compileReportToFile(bodyReportFromName,bodyReportToName);
 
             /* Compile the master */
             String masterReportFileName = properties.getProperty("master_template");
@@ -50,6 +58,7 @@ public class CreateReport {
             /* fill parameters to the master */
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("subreport_path", subReportToName);
+            parameters.put("body_path", bodyReportToName);
             parameters.put("cip", "CIP-000001");
             parameters.put("doc", "FH1.&&&&&&&&&&&&&.1.E");
             JasperPrint preparedJasperReportPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
