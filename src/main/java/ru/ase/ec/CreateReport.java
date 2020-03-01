@@ -50,8 +50,6 @@ public class CreateReport {
 
             /* Compile the sub report */
             JasperCompileManager.compileReportToFile(subReportFromName, subReportToName);
-            /* Compile the body report */
-            JasperCompileManager.compileReportToFile(bodyReportFromName, bodyReportToName);
 
             /* Compile the master */
             String masterReportFileName = properties.getProperty("master_template");
@@ -60,7 +58,6 @@ public class CreateReport {
             /* fill parameters to the master */
             Map<String, Object> parameters = new HashMap<>();
             parameters.put("subreport_path", subReportToName);
-            parameters.put("body_path", bodyReportToName);
             parameters.put("cip", "CIP-000001");
             parameters.put("doc", "FH1.&&&&&&&&&&&&&.1.E");
             JasperPrint preparedJasperReportPrint = JasperFillManager.fillReport(jasperMasterReport, parameters, beanColDataSource);
