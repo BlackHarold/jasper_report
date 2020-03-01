@@ -2,10 +2,10 @@ package ru.ase.ec;
 
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import net.sf.jasperreports.engine.export.JRXlsExporter;
-import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
 import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
-import net.sf.jasperreports.export.*;
+import net.sf.jasperreports.export.SimpleExporterInput;
+import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimpleXlsxReportConfiguration;
 import net.sf.jasperreports.view.JRViewer;
 import org.apache.log4j.Logger;
 import ru.ase.ec.beans.DataBean;
@@ -75,11 +75,7 @@ public class CreateReport {
             JasperExportManager.exportReportToPdfFile(preparedJasperReportPrint, file_name);
 
             // export prepared report to xls file:
-//            JRXlsExporter xlsExporter = new JRXlsExporter();
-//            xlsExporter.setExporterInput(new SimpleExporterInput(preparedJasperReportPrint));
-//            xlsExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(file_name+".xlsx"));
 //            SimpleXlsReportConfiguration xlsReportConfiguration = new SimpleXlsReportConfiguration();
-////            SimpleXlsExporterConfiguration xlsExporterConfiguration = new SimpleXlsExporterConfiguration();
 //            xlsReportConfiguration.setOnePagePerSheet(true);
 //            xlsReportConfiguration.setRemoveEmptySpaceBetweenRows(false);
 //            xlsReportConfiguration.setDetectCellType(true);
@@ -93,7 +89,7 @@ public class CreateReport {
 
 // Set input and output ...
             SimpleXlsxReportConfiguration reportConfig = new SimpleXlsxReportConfiguration();
-            reportConfig.setSheetNames(new String[]{"Employee Data"});
+            reportConfig.setSheetNames(new String[]{"CIP Report"});
 
             exporter.setConfiguration(reportConfig);
             exporter.exportReport();
@@ -121,6 +117,5 @@ public class CreateReport {
 
         reportFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         reportFrame.setVisible(true);
-
     }
 }
