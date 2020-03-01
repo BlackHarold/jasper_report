@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_template" pageWidth="600" pageHeight="842" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b320210d-2e5c-42dc-9795-4f508c19ef1c">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_template" pageWidth="600" pageHeight="764" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b320210d-2e5c-42dc-9795-4f508c19ef1c">
 	<property name="ireport.zoom" value="1"/>
 	<property name="ireport.x" value="5"/>
 	<property name="ireport.y" value="0"/>
@@ -198,7 +198,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="637" splitType="Immediate">
+		<band height="50" splitType="Immediate">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<subreport>
 				<reportElement positionType="Float" x="-20" y="-32" width="492" height="20" isRemoveLineWhenBlank="true" backcolor="#99CCFF" uuid="61d0af84-4b05-422f-b716-7abd630962e8">
@@ -258,7 +258,7 @@
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="64" splitType="Immediate">
+		<band height="66" splitType="Immediate">
 			<rectangle>
 				<reportElement x="242" y="0" width="246" height="64" uuid="cca5f8f1-d093-47b7-baa3-8f50bc9f3f1b">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -714,6 +714,9 @@
 				</textElement>
 				<textFieldExpression><![CDATA["approve"]]></textFieldExpression>
 			</textField>
+			<break>
+				<reportElement x="0" y="64" width="562" height="1" uuid="fb968b28-bd25-4457-9497-c0ebe1fe5c72"/>
+			</break>
 		</band>
 	</pageFooter>
 	<summary>

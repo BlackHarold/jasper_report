@@ -2,6 +2,10 @@ package ru.ase.ec;
 
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.engine.export.JRXlsExporterParameter;
+import net.sf.jasperreports.engine.export.ooxml.JRXlsxExporter;
+import net.sf.jasperreports.export.*;
 import net.sf.jasperreports.view.JRViewer;
 import org.apache.log4j.Logger;
 import ru.ase.ec.beans.DataBean;
@@ -49,7 +53,7 @@ public class CreateReport {
             /* Compile the sub report */
             JasperCompileManager.compileReportToFile(subReportFromName, subReportToName);
             /* Compile the body report */
-            JasperCompileManager.compileReportToFile(bodyReportFromName,bodyReportToName);
+            JasperCompileManager.compileReportToFile(bodyReportFromName, bodyReportToName);
 
             /* Compile the master */
             String masterReportFileName = properties.getProperty("master_template");
@@ -69,6 +73,30 @@ public class CreateReport {
             /* export prepared report to pdf file */
             String file_name = properties.getProperty("file_name");
             JasperExportManager.exportReportToPdfFile(preparedJasperReportPrint, file_name);
+
+            // export prepared report to xls file:
+//            JRXlsExporter xlsExporter = new JRXlsExporter();
+//            xlsExporter.setExporterInput(new SimpleExporterInput(preparedJasperReportPrint));
+//            xlsExporter.setExporterOutput(new SimpleOutputStreamExporterOutput(file_name+".xlsx"));
+//            SimpleXlsReportConfiguration xlsReportConfiguration = new SimpleXlsReportConfiguration();
+////            SimpleXlsExporterConfiguration xlsExporterConfiguration = new SimpleXlsExporterConfiguration();
+//            xlsReportConfiguration.setOnePagePerSheet(true);
+//            xlsReportConfiguration.setRemoveEmptySpaceBetweenRows(false);
+//            xlsReportConfiguration.setDetectCellType(true);
+//            xlsReportConfiguration.setWhitePageBackground(false);
+//            xlsExporter.setConfiguration(xlsReportConfiguration);
+//            xlsExporter.exportReport();
+
+            JRXlsxExporter exporter = new JRXlsxExporter();
+            exporter.setExporterInput(new SimpleExporterInput(preparedJasperReportPrint));
+            exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(file_name+".xlsx"));
+
+// Set input and output ...
+            SimpleXlsxReportConfiguration reportConfig = new SimpleXlsxReportConfiguration();
+            reportConfig.setSheetNames(new String[]{"Employee Data"});
+
+            exporter.setConfiguration(reportConfig);
+            exporter.exportReport();
 
         } catch (JRException jre) {
             LOG.error("master report error compile");
