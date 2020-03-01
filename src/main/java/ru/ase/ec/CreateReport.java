@@ -25,12 +25,10 @@ public class CreateReport {
     private static final Logger LOG = Logger.getLogger("blackLogger");
 
     public static void main(String[] args) {
-
-        new CreateReport().create();
+        new CreateReport().start();
     }
 
-    public void create() {
-
+    public void start() {
         Properties properties = new Properties();
         try {
             properties.load(new FileInputStream("src/main/resources/application.properties"));
@@ -85,7 +83,8 @@ public class CreateReport {
 
             JRXlsxExporter exporter = new JRXlsxExporter();
             exporter.setExporterInput(new SimpleExporterInput(preparedJasperReportPrint));
-            exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(file_name+".xlsx"));
+            String file_name_xls = properties.getProperty("file_name_xls");
+            exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(file_name_xls));
 
 // Set input and output ...
             SimpleXlsxReportConfiguration reportConfig = new SimpleXlsxReportConfiguration();

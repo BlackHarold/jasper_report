@@ -19,7 +19,8 @@ public class DataBeanList {
 
         ArrayList<DataBean> dataBeanList = new ArrayList<>();
         // Create master report data
-        dataBeanList.add(produce("FH1.&&&&.1.E", "01", "code1", Arrays.asList(subBean3, subBean1, subBean2, subBean1, subBean2, subBean3, subBean1, subBean2, subBean1, subBean2, subBean3, subBean1, subBean1)));
+        dataBeanList.add(produce("regContr", "teamLead", "depLead", "leadProjEng", "chiefArch", "FH1.&&&&.1.E", "01", "code1",
+                Arrays.asList(subBean3, subBean1, subBean2, subBean1, subBean2, subBean3, subBean1, subBean2, subBean1, subBean2, subBean3, subBean1, subBean1)));
 
         return dataBeanList;
     }
@@ -28,8 +29,12 @@ public class DataBeanList {
      * This method returns a DataBean object,
      * bean data set in it.
      */
-    private DataBean produce(String doc, String revision, String code, List<SubReportBean> subBean) {
-        DataBean dataBean = new DataBean(doc, revision, code, subBean);
+    private DataBean produce(String regContr, String teamLead, String depLead, String leadProjEng, String chiefArch, String doc, String revision, String code, List<SubReportBean> subBean) {
+//  <field name="   teamLead               " class="java.lang.String"/>
+//	<field name="   depLead                " class="java.lang.String"/>
+//	<field name="   leadProjEng                " class="java.lang.String"/>
+//	<field name="   chiefArch              " class="java.lang.String"/>
+        DataBean dataBean = new DataBean(regContr,teamLead, depLead, leadProjEng, chiefArch, doc, revision, code, subBean);
 
         return dataBean;
     }
