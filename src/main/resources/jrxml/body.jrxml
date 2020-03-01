@@ -25,7 +25,7 @@
 	</columnHeader>
 	<detail>
 		<band height="27" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 			<staticText>
 				<reportElement x="62" y="0" width="39" height="27" uuid="15f7de90-ec1b-43fc-8b5d-e40470990562"/>
 				<box>
