@@ -71,7 +71,7 @@ public class CreateReport {
             JasperExportManager.exportReportToPdfFile(preparedJasperReportPrint, file_name);
 
         } catch (JRException jre) {
-            System.out.println("master report error compile");
+            LOG.error("master report error compile");
             jre.printStackTrace();
         }
     }

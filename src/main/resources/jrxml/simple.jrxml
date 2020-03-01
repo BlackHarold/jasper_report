@@ -28,8 +28,8 @@
 	</columnHeader>
 	<detail>
 		<band height="27" splitType="Stretch">
-			<textField>
-				<reportElement x="19" y="0" width="39" height="20" uuid="7b5a72c0-07fd-4d50-b31a-10e867ff721d">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="19" y="0" width="39" height="27" isPrintWhenDetailOverflows="true" uuid="7b5a72c0-07fd-4d50-b31a-10e867ff721d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="3">
@@ -44,8 +44,8 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{link}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="58" y="0" width="273" height="20" uuid="dc410361-046e-4364-bf28-4e1e972d21cb">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="58" y="0" width="273" height="27" isPrintWhenDetailOverflows="true" uuid="dc410361-046e-4364-bf28-4e1e972d21cb">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="3">
@@ -60,8 +60,8 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="370" y="0" width="102" height="20" uuid="d176c62f-dc60-48e9-9419-b1b2a35d4707">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToTallestObject" x="370" y="0" width="102" height="27" isPrintWhenDetailOverflows="true" uuid="d176c62f-dc60-48e9-9419-b1b2a35d4707">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box leftPadding="3">

@@ -218,7 +218,7 @@
 					($F{subReportBeanList})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{subreport_path}]]></subreportExpression>
 			</subreport>
-			<textField>
+			<textField isStretchWithOverflow="true">
 				<reportElement x="62" y="0" width="39" height="20" uuid="71b3808f-2c57-4b9f-ba97-026ee9400466">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
