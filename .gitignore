@@ -1,6 +1,6 @@
 .idea
 .settings
+/logs
 /bin
 *.iml
 src/main/resources/out
-src/main/resources/font
